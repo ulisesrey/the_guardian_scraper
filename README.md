@@ -1,19 +1,7 @@
 # Analyzing The Guardian’s headlines using web scrapping
 ## A report on world politics and the Coronavirus Pandemic.
 
-Context
-Title
-Dataset description
-Graphical representation
-Content
-Propietary
-Inspiration
-Dataset License
-Code explanation
-Dataset
-Video explanation
 
-Index
 ### Introduction and Context:
 In this project we wanted to have access to all the headlines from the British newspaper “The Guardian” to analyze the presence of certain keywords over time. The Guardian is one of the most read newspapers online, and it is interesting to see in which topics their news focus over a period of time. This can help us understand the public interest in certain news, for instance, how often are the terms “vaccine” or “climate” used in headlines over time? Moreover, newspaper not only reflect the world but they also influence it, be it deliberately or not. For instance, one newspaper can decide to talk more about an armed conflict in order to increase their readers awareness about it. Also, a dataset of headlines can be used for marketing, investments or even used during elections to understand voters’ intentions or preferences. It is out of the scope of this assignment, but with machine learning tools, companies, traders of the stock market, or political parties can build models to predict outcomes and adjust their behaviours based on them. This includes techniques such as sentiment analysis, which could be used to extract more information about the headlines.
 
@@ -90,7 +78,7 @@ time.sleep(random.uniform(0, 1))  # Random delay between 0 and 1 seconds
 
 With all this, we were able to scrap The Guardian for all the day headlines for a period of almost 4 years without being blocked.
 
-#### Dataset:
+### Dataset:
 This web scraper can be used for multiple purposes. In this project we wanted to analyze the presence of some keywords for a specific time period, ranging from begining of 2019 to November 2024. The generated dataset has been uploaded to ZENODO with a License CC BY-SA 4.0, and is free to download via this link. It contains all the headlines of the newspaper The Guardian between the dates 2019-01-01 to 2024-11-01.
 
 Its DOI is the following: https://doi.org/10.5281/zenodo.14066041
@@ -112,31 +100,32 @@ As mentioned in the introduction, such a headline dataset is very powerful and c
 3) Which vaccine producing companies hit the headlines more often?
 4) What is The Guardian's coverage of ongoing military conflicts, like the ones in Sudan, Ukraine or Gaza?
 
-#### Results
-You can visualize the results in the notebook under source.
-For this report we also attach some graphs which try to answer the questions we had.
-##### 1) Which president of the United States made it more often to The Guardian's headlines, Trump or Biden? What was the temporal evolution of it?
+
+You can visualize the results in the notebook under source, but for this report we also attach some graphs which try to answer the questions we had.
+#### 1) Which president of the United States made it more often to The Guardian's headlines, Trump or Biden? What was the temporal evolution of it?
 In the following image we clearly see that during his presidency Donald Trump made it more often to the headlines.
 
 ![alt text](/plots/trump_biden.png)
 
-##### 2) What is the temporal evolution of the PM's in the U.K. appearance in the headlines? Who appeared the most?
+#### 2) What is the temporal evolution of the PM's in the U.K. appearance in the headlines? Who appeared the most?
 We see that Boris Johnson made it more than anyone else in to the headlines.
 
 ![alt text](/plots/uk.png)
-##### 3) Which vaccine producing companies hit the headlines more often?
+#### 3) Which vaccine producing companies hit the headlines more often?
 AstraZeneca was the most popular vaccine, altough Pfizer was a fore-runner.
 
 ![alt text](/plots/vaccines.png)
-##### 4) What is The Guardian's coverage of ongoing military conflicts, like the ones in Sudan, Ukraine or Gaza?
+#### 4) What is The Guardian's coverage of ongoing military conflicts, like the ones in Sudan, Ukraine or Gaza?
 We see that the conflict with a wider Coverage has been Ukraine, but Gaza surpassing it after October 2023 or being very close.
 
 ![alt text](/plots/conflicts.png)
+
 ### Autorship:
 The sole author of the code in this repository as well as the creator of the dataset is Ulises Rey, student of the Master in Data Science at the Universitat Oberta de Catalunya (UOC), for the PR1 of Tipologia i cicle de vida de les dades.
 
 
 ## Bibliography
 
-### Random agents and random intervals:
-https://www.zenrows.com/blog/user-agent-web-scraping
+    Lawson, R. (2015). Web Scraping with Python.
+    Penman, R.(2015) Web Scrapping with Python: Successfully Scrape Data from Any Website with the Power of Python (https://ebookcentral.proquest.com/lib/bibliouocsp-ebooks/detail.action?docID=4191102)
+    User Agent and Web Scrapping. https://www.zenrows.com/blog/user-agent-web-scraping
