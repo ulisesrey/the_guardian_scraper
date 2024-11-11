@@ -16,8 +16,8 @@ To install The Guardian newspaper analyzer clone this repository into your local
 git clone https://github.com/ulisesrey/the_guardian_scraper
 ```
 
-Follow this tutorial if you are not familiar with the process:
-https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
+Follow [this tutorial](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) if you are not familiar with the process.
+
 
 
 #### Execution
