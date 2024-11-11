@@ -109,15 +109,29 @@ date,headline
 As mentioned in the introduction, such a headline dataset is very powerful and can have multiple uses. For this project we will use our dataset to try to answer this questions:
 1) Which president of the United States made it more often to The Guardian's headlines, Trump or Biden? What was the temporal evolution of it?
 2) What is the temporal evolution of the PM's in the U.K. appearance in the headlines? Who appeared the most?
-3) When did the Coronavirus topic start losing interest, i.e. had less headlines per month?
-4) Which vaccine producing companies hit the headlines more often?
-5) What is The Guardian's coverage of ongoing military conflicts, like the ones in Sudan, Ukraine or Gaza?
+3) Which vaccine producing companies hit the headlines more often?
+4) What is The Guardian's coverage of ongoing military conflicts, like the ones in Sudan, Ukraine or Gaza?
 
 #### Results
-You can visualize the results in the notebook udner source.
+You can visualize the results in the notebook under source.
 For this report we also attach some graphs which try to answer the questions we had.
 ##### 1) Which president of the United States made it more often to The Guardian's headlines, Trump or Biden? What was the temporal evolution of it?
+In the following image we clearly see that during his presidency Donald Trump made it more often to the headlines.
 
+![alt text](image.png)
+
+##### 2) What is the temporal evolution of the PM's in the U.K. appearance in the headlines? Who appeared the most?
+We see that Boris Johnson made it more than anyone else in to the headlines.
+
+![alt text](image-1.png)
+##### 3) Which vaccine producing companies hit the headlines more often?
+AstraZeneca was the most popular vaccine, altough Pfizer was a fore-runner.
+
+![alt text](image-2.png)
+##### 4) What is The Guardian's coverage of ongoing military conflicts, like the ones in Sudan, Ukraine or Gaza?
+We see that the conflict with a wider Coverage has been Ukraine, but Gaza surpassing it after October 2023 or being very close.
+
+![alt text](image-3.png)
 ### Autorship:
 The sole author of the code in this repository as well as the creator of the dataset is Ulises Rey, student of the Master in Data Science at the Universitat Oberta de Catalunya (UOC), for the PR1 of Tipologia i cicle de vida de les dades.
 
