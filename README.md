@@ -2,7 +2,7 @@
 ## A report on world politics and the Coronavirus Pandemic
 
 ### Project information
-Authour: Ulises Rey
+Authour: Ulises Rey, [urey@uoc.edu](urey@uoc.edu)
 
 Website chosen: [www.theguardian.com](www.theguardian.com)
 
@@ -12,10 +12,10 @@ Link to dataset: [https://doi.org/10.5281/zenodo.14066041](https://doi.org/10.52
 
 Link to video presentation: Uploaded to the university website. 
 
-### Introduction and Context:
+### Introduction:
 In this project we wanted to have access to all the headlines from the British newspaper “The Guardian” to analyze the presence of certain keywords over time. The Guardian is one of the most read newspapers online, and it is interesting to see in which topics their news focus over a period of time. This can help us understand the public interest in certain news, for instance, how often are the terms “vaccine” or “climate” used in headlines over time? Moreover, newspaper not only reflect the world but they also influence it, be it deliberately or not. For instance, one newspaper can decide to talk more about an armed conflict in order to increase their readers awareness about it. Also, a dataset of headlines can be used for marketing, investments or even used during elections to understand voters’ intentions or preferences. It is out of the scope of this assignment, but with machine learning tools, companies, traders of the stock market, or political parties can build models to predict outcomes and adjust their behaviours based on them. This includes techniques such as sentiment analysis, which could be used to extract more information about the headlines.
 
-### Context
+### Context:
 The Guardian's newspaper has an archive of its news available online. We are interested in extracting the headlines of each day for a period of time, to create a dataset for further analysis. The information we want to extract is, as we can see from this screenshot from the 2nd of January, inside an h3 header.
 ![alt text](images/example.png)
 
@@ -24,7 +24,7 @@ The Guardian's newspaper has an archive of its news available online. We are int
 For this project we have built a github repository which consists on few modules that help extract data from the newspaper “The Guardian”. The code is written in a modular way and could be easily adapted if we wanted to analyze headlines of other newspapers, but to some extend it is specific to The Guardian web structure.
 A part from this report (or Readme file), the code is documented and commented to be easy to understand and follow the different steps, pelase check the documentation.
 
-#### Installation
+#### Installation:
 To install The Guardian newspaper analyzer clone this repository into your local machine, or just download it from github.
 
 ```bash
@@ -35,14 +35,14 @@ Follow [this tutorial](https://docs.github.com/en/repositories/creating-and-mana
 
 
 
-#### Execution
+#### Execution:
 Once the repository has been downloaded, execute the main script to extract the headlines between two dates. For example, to extract the headlines between the 1st of October 2024 and the 1st of November 2024 we would write:
 ```bash
 main.py -start 2024-10-27 -end 2024-11-01 -o dataset/my_dataset.csv
 ```
 The first two inputs to the main.py script are the initial date, and end date. The third input is the filepath where the data will be saved.
 
-#### Output
+#### Output:
 When successfully run the script, you will generate the output file in the specified path. You should also see something like this in your terminal:
 ```
 2024-11-11 16:15:14,058 - INFO - Using User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
@@ -68,7 +68,7 @@ Two files are created after the execution, the dataset itself, found on dataset 
 
 To learn more about the Dataset check the section "Dataset" below.
 
-#### Code Summary
+#### Code Summary:
 The main.py script, takes the two specified dates and calls the function scrape_guardian_headlines() from the scrape_guardian.py module.
 
 There are two important features of the scrape_guardian.py module that have been designed to avoid prevention of web scrapping.
@@ -125,7 +125,7 @@ Each date will have several (usually from 20 - 30) headlines depending, on the d
 Since The Guardian is published daily, every single day in the requested range will have some rows with headlines.
 In our analysis we have focused on number of occurences a word appears, each month, to be able to visualize an evolution across the 4 years time.
 
-### Analysis and Results
+### Analysis and Results:
 As mentioned in the introduction, such a headline dataset is very powerful and can have multiple uses. For this project we will use our dataset to try to answer this questions:
 1) Which president of the United States made it more often to The Guardian's headlines, Trump or Biden? What was the temporal evolution of it?
 2) What is the temporal evolution of the PM's in the U.K. appearance in the headlines? Who appeared the most?
@@ -164,7 +164,7 @@ Code Development: Ulises Rey
 Video presentation: Ulises Rey
 
 
-## Bibliography
+## Bibliography:
 
     Lawson, R. (2015). Web Scraping with Python.
     Penman, R.(2015) Web Scrapping with Python: Successfully Scrape Data from Any Website with the Power of Python (https://ebookcentral.proquest.com/lib/bibliouocsp-ebooks/detail.action?docID=4191102)
