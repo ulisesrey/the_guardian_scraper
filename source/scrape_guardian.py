@@ -53,6 +53,6 @@ def scrape_guardian_headlines(date):
 
 
     # Add a random delay to mimic human behavior
-    time.sleep(random.uniform(0, 1))  # Random delay between 0 and 2 seconds
+    time.sleep(random.uniform(0, 1))  # Random delay between 0 and 1 seconds
     
     return headlines
