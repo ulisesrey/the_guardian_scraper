@@ -32,8 +32,8 @@ def main(start_date, end_date, output_file):
 if __name__ == "__main__":
     # Set up argument parsing
     parser = argparse.ArgumentParser(description="Scrape headlines from The Guardian within a date range.")
-    parser.add_argument("start_date", type=str, help="Start date in YYYY-MM-DD format")
-    parser.add_argument("end_date", type=str, help="End date in YYYY-MM-DD format")
+    parser.add_argument("-start", "--start_date", type=str, help="Start date in YYYY-MM-DD format")
+    parser.add_argument("-end", "--end_date", type=str, help="End date in YYYY-MM-DD format")
     parser.add_argument("-o", "--output", type=str, default="dataset/guardian_headlines.csv",
                         help="Output file path for the CSV file (default: dataset/guardian_headlines.csv)")
 

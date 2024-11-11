@@ -23,7 +23,7 @@ https://docs.github.com/en/repositories/creating-and-managing-repositories/cloni
 #### Execution
 Once the repository has been downloaded, execute the main script to extract the headlines between two dates. For example, to extract the headlines between the 1st of October 2024 and the 1st of November 2024 we would write:
 ```bash
-main.py 2024-10-27 2024-11-01 -o dataset/dataset_october_november2024.csv
+main.py -start 2024-10-27 -end 2024-11-01 -o dataset/my_dataset.csv
 ```
 The first two inputs to the main.py script are the initial date, and end date. The third input is the filepath where the data will be saved.
 
@@ -36,7 +36,7 @@ Scraping date: 2024-10-29
 Scraping date: 2024-10-30
 Scraping date: 2024-10-31
 Scraping date: 2024-11-01
-Data collection completed and saved to dataset/dataset_october_november2024.csv
+Data collection completed and saved to dataset/my_dataset.csv
 ```
 
 To learn more about the output check the section "Dataset" below.
