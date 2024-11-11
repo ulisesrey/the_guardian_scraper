@@ -22,17 +22,35 @@ For this project we have built a github repository which consists on few modules
 A part from this report (or Readme file), the code is documented and commented to be easy to understand and follow the different steps, pelase check the documentation.
 
 #### Installation
-To install The Guardian newspaper analyzer clone this repository into your local machine.
+To install The Guardian newspaper analyzer clone this repository into your local machine, or just download it from github.
+
+```bash
+git clone https://github.com/ulisesrey/the_guardian_scraper
+```
+
+Follow this tutorial if you are not familiar with the process:
+https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
 
 
 #### Execution
 Once the repository has been downloaded, execute the main script to extract the headlines between two dates. For example, to extract the headlines between the 1st of October 2024 and the 1st of November 2024 we would write:
 ```bash
-main.py 2024-10-01 2024-11-01 dataset/dataset_october_november2024.csv
+main.py 2024-10-27 2024-11-01 -o dataset/dataset_october_november2024.csv
 ```
 The first two inputs to the main.py script are the initial date, and end date. The third input is the filepath where the data will be saved.
 
 #### Output
+When successfully run the script, you will generate the output file in the specified path. You should also see something like this in your terminal:
+```
+Scraping date: 2024-10-27
+Scraping date: 2024-10-28
+Scraping date: 2024-10-29
+Scraping date: 2024-10-30
+Scraping date: 2024-10-31
+Scraping date: 2024-11-01
+Data collection completed and saved to dataset/dataset_october_november2024.csv
+```
+
 To learn more about the output check the section "Dataset" below.
 
 #### Code Summary
@@ -70,24 +88,38 @@ We also added a random time sleep, to mimic human behavior. The idea is that bot
 time.sleep(random.uniform(0, 1))  # Random delay between 0 and 1 seconds
 ```
 
+With all this, we were able to scrap The Guardian for all the day headlines for a period of almost 4 years without being blocked.
+
 #### Dataset:
-The web scraper can be used for multiple purposes. In this project we wanted to analyze the presence of some keywords for a specific time period. The generated dataset has been uploaded to ZENODO with a License CC BY-SA 4.0, and is free to download via this link. It contains all the headlines of the newspaper The Guardian between the dates 2019-01-01 to 2024-11-01.
+This web scraper can be used for multiple purposes. In this project we wanted to analyze the presence of some keywords for a specific time period, ranging from begining of 2019 to November 2024. The generated dataset has been uploaded to ZENODO with a License CC BY-SA 4.0, and is free to download via this link. It contains all the headlines of the newspaper The Guardian between the dates 2019-01-01 to 2024-11-01.
 
 Its DOI is the following: https://doi.org/10.5281/zenodo.14066041
 
+It looks like this:
+```
+date,headline
+2019-01-01,Jair Bolsonaro takes office as Brazil’s president – in pictures
+2019-01-01,Indonesia landslide on New Year's Eve leaves 15 dead and 20 missing
+2019-01-01,Terrawatch: landslide tsunami lessons from Anak Krakatau
+2019-01-01,Mali attack: 37 civilians killed in armed raid on village
+```
+
+
+### Analysis and Results
+As mentioned in the introduction, such a headline dataset is very powerful and can have multiple uses. For this project we will use our dataset to try to answer this questions:
+1) Which president of the United States made it more often to The Guardian's headlines, Trump or Biden? What was the temporal evolution of it?
+2) What is the temporal evolution of the PM's in the U.K. appearance in the headlines? Who appeared the most?
+3) When did the Coronavirus topic start losing interest, i.e. had less headlines per month?
+4) Which vaccine producing companies hit the headlines more often?
+5) What is The Guardian's coverage of ongoing military conflicts, like the ones in Sudan, Ukraine or Gaza?
+
+#### Results
+You can visualize the results in the notebook udner source.
+For this report we also attach some graphs which try to answer the questions we had.
+##### 1) Which president of the United States made it more often to The Guardian's headlines, Trump or Biden? What was the temporal evolution of it?
+
 ### Autorship:
-The sole author of the code in this repository as well as the creator of the dataset is Ulises Rey, student of the Master in Data Science at the Universitat Oberta de Catalunya (UOC).
-
-
-
-
-
- 
-
-
-# web_scrapping_uoc
-Tipologia cicle de dades PR1, master in Data Science, Universitat Oberta de Catalunya
-
+The sole author of the code in this repository as well as the creator of the dataset is Ulises Rey, student of the Master in Data Science at the Universitat Oberta de Catalunya (UOC), for the PR1 of Tipologia i cicle de vida de les dades.
 
 
 ## Bibliography
