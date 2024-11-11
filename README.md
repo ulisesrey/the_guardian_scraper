@@ -1,6 +1,16 @@
 # Analyzing The Guardian’s headlines using web scrapping
-## A report on world politics and the Coronavirus Pandemic.
+## A report on world politics and the Coronavirus Pandemic
 
+### Project information
+Authour: Ulises Rey
+
+Website chosen: [www.theguardian.com](www.theguardian.com)
+
+Link to code repository: [https://github.com/ulisesrey/the_guardian_scraper](https://github.com/ulisesrey/the_guardian_scraper)
+
+Link to dataset: [https://doi.org/10.5281/zenodo.14066041](https://doi.org/10.5281/zenodo.14066041)
+
+Link to video presentation: Uploaded to the university website. 
 
 ### Introduction and Context:
 In this project we wanted to have access to all the headlines from the British newspaper “The Guardian” to analyze the presence of certain keywords over time. The Guardian is one of the most read newspapers online, and it is interesting to see in which topics their news focus over a period of time. This can help us understand the public interest in certain news, for instance, how often are the terms “vaccine” or “climate” used in headlines over time? Moreover, newspaper not only reflect the world but they also influence it, be it deliberately or not. For instance, one newspaper can decide to talk more about an armed conflict in order to increase their readers awareness about it. Also, a dataset of headlines can be used for marketing, investments or even used during elections to understand voters’ intentions or preferences. It is out of the scope of this assignment, but with machine learning tools, companies, traders of the stock market, or political parties can build models to predict outcomes and adjust their behaviours based on them. This includes techniques such as sentiment analysis, which could be used to extract more information about the headlines.
@@ -86,6 +96,8 @@ And later in the code we choose a random agent from our list with random.choice:
 headers = {'User-Agent': random.choice(USER_AGENTS)}
 ```
 
+The Agent is printed during execution and saved in a log file, to verify we are alternating between the agents.
+
 **Random time Sleep**
 We also added a random time sleep, to mimic human behavior. The idea is that bots would send a request at fixed intervals and the web administrator can easily block them. To look more like human requests we can use a random time sleep.
 ```python
@@ -95,7 +107,7 @@ time.sleep(random.uniform(0, 1))  # Random delay between 0 and 1 seconds
 
 With all this, we were able to scrap The Guardian for all the day headlines for a period of almost 4 years without being blocked.
 
-### Dataset:
+### Dataset Content:
 This web scraper can be used for multiple purposes. In this project we wanted to analyze the presence of some keywords for a specific time period, ranging from begining of 2019 to November 2024. The generated dataset has been uploaded to ZENODO with a License CC BY-SA 4.0, and is free to download via this link. It contains all the headlines of the newspaper The Guardian between the dates 2019-01-01 to 2024-11-01.
 
 Its DOI is the following: https://doi.org/10.5281/zenodo.14066041
@@ -109,6 +121,9 @@ date,headline
 2019-01-01,Mali attack: 37 civilians killed in armed raid on village
 ```
 
+Each date will have several (usually from 20 - 30) headlines depending, on the day. Each headline consists of a string of words which will be the basis of our analysis.
+Since The Guardian is published daily, every single day in the requested range will have some rows with headlines.
+In our analysis we have focused on number of occurences a word appears, each month, to be able to visualize an evolution across the 4 years time.
 
 ### Analysis and Results
 As mentioned in the introduction, such a headline dataset is very powerful and can have multiple uses. For this project we will use our dataset to try to answer this questions:
@@ -139,6 +154,14 @@ We see that the conflict with a wider Coverage has been Ukraine, but Gaza surpas
 
 ### Autorship:
 The sole author of the code in this repository as well as the creator of the dataset is Ulises Rey, student of the Master in Data Science at the Universitat Oberta de Catalunya (UOC), for the PR1 of Tipologia i cicle de vida de les dades.
+
+Previous research: Ulises Rey
+
+Question answering: Ulises Rey
+
+Code Development: Ulises Rey
+
+Video presentation: Ulises Rey
 
 
 ## Bibliography
