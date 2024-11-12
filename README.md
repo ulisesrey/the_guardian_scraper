@@ -2,7 +2,7 @@
 ## A report on world politics and the Coronavirus Pandemic
 
 ### Project information
-Authour: Ulises Rey, [urey@uoc.edu](urey@uoc.edu)
+Authours: Ulises Rey, [urey@uoc.edu](urey@uoc.edu), Oriol Casellas, [ocasellasventura@uoc.edu](ocasellasventura@uoc.edu)
 
 Website chosen: [www.theguardian.com](www.theguardian.com)
 
