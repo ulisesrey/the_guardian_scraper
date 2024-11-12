@@ -2,11 +2,7 @@
 ## A report on world politics and the Coronavirus Pandemic
 
 ### Project information
-<<<<<<< HEAD
 Authors: Ulises Rey ([urey@uoc.edu](urey@uoc.edu)) i Oriol Casellas Ventura ([ocasellasventura@uoc.edu)](ocasellasventura@uoc.edu))
-=======
-Authours: Ulises Rey, [urey@uoc.edu](urey@uoc.edu), Oriol Casellas, [ocasellasventura@uoc.edu](ocasellasventura@uoc.edu)
->>>>>>> 1168efd719d2419f5a42d3330ba1303d424bbd09
 
 Website chosen: [www.theguardian.com](www.theguardian.com)
 
@@ -173,3 +169,4 @@ Video presentation: Ulises Rey i Oriol Casellas
     Lawson, R. (2015). Web Scraping with Python.
     Penman, R.(2015) Web Scrapping with Python: Successfully Scrape Data from Any Website with the Power of Python (https://ebookcentral.proquest.com/lib/bibliouocsp-ebooks/detail.action?docID=4191102)
     User Agent and Web Scrapping. https://www.zenrows.com/blog/user-agent-web-scraping
+    --------
