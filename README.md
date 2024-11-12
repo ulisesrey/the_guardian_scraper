@@ -155,13 +155,13 @@ We see that the conflict with a wider Coverage has been Ukraine, but Gaza surpas
 ### Autorship:
 The sole author of the code in this repository as well as the creator of the dataset is Ulises Rey, student of the Master in Data Science at the Universitat Oberta de Catalunya (UOC), for the PR1 of Tipologia i cicle de vida de les dades.
 
-Previous research: Ulises Rey
+Previous research: Ulises Rey i Oriol Casellas
 
-Question answering: Ulises Rey
+Question answering: Ulises Rey i Oriol Casellas
 
-Code Development: Ulises Rey
+Code Development: Ulises Rey i Oriol Casellas
 
-Video presentation: Ulises Rey
+Video presentation: Ulises Rey i Oriol Casellas
 
 
 ## Bibliography:
