@@ -2,7 +2,7 @@
 ## A report on world politics and the Coronavirus Pandemic
 
 ### Project information
-Authour: Ulises Rey, [urey@uoc.edu](urey@uoc.edu)
+Authors: Ulises Rey ([urey@uoc.edu](urey@uoc.edu)) i Oriol Casellas Ventura ([ocasellasventura@uoc.edu)](ocasellasventura@uoc.edu))
 
 Website chosen: [www.theguardian.com](www.theguardian.com)
 
@@ -142,7 +142,7 @@ In the following image we clearly see that during his presidency Donald Trump ma
 #### 2) What is the temporal evolution of the PM's in the U.K. appearance in the headlines? Who appeared the most?
 We see that Boris Johnson made it more than anyone else in to the headlines.
 
-![alt text](/plots/uk.png)
+![alt text](/plots/uk_pm.png)
 #### 3) Which vaccine producing companies hit the headlines more often?
 AstraZeneca was the most popular vaccine, altough Pfizer was a fore-runner.
 
