@@ -15,17 +15,19 @@ def main(start_date, end_date, output_file):
     # Open the CSV file once and set up the writer
     with open(output_file, mode='w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
-        writer.writerow(["date", "headline"])  # Write header
+        writer.writerow(["date", "authors", "headline", "topics"])  # Write header
         
         current_date = start_date
         while current_date <= end_date:
             print(f"Scraping date: {current_date.strftime('%Y-%m-%d')}")
-            headlines = scrape_guardian_headlines(current_date)
+            authors, headlines, topics = scrape_guardian_headlines(current_date)
             
-            # Write each headline to the CSV file immediately
-            for headline in headlines:
-                writer.writerow([current_date.strftime('%Y-%m-%d'), headline])
-            
+        
+            # Write each headline, author, and topic to the CSV file immediately
+            for i in range(len(headlines)):
+                writer.writerow([current_date.strftime('%Y-%m-%d'), authors[i], headlines[i], topics[i]])
+
+                
             current_date += timedelta(days=1)
     print(f"Data collection completed and saved to {output_file}")
 
