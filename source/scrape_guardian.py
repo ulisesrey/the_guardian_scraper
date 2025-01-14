@@ -17,7 +17,7 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
     handlers=[
         logging.FileHandler("logs/scraper.log"),
-        logging.StreamHandler()
+        #logging.StreamHandler() # To show message on terminal
     ]
 )
 
@@ -113,12 +113,19 @@ def scrape_article(url, content=False):
     except AttributeError:
         author = "No author found"
     # TODO: Do something if author is not found like this, for instance Associated Press, or no author.
-    
-    # get the headline
-    headline = soup.title.get_text(strip=True)
-    #g et the topics
-    topics = [soup.find("meta", property="article:tag").get("content", "").strip(",")]
 
+
+    # find the headline in h1 tag
+    try:
+        headline = soup.find("h1").get_text(strip=True)
+    except AttributeError:
+        headline = "No headline found"
+
+    #g et the topics
+    try:
+        topics = soup.find("meta", property="article:tag").get("content", "").strip(",")
+    except AttributeError:
+        topics = "No topics found"
     # article content
     if content is True:
         main_content = soup.find("div", {"id": "maincontent"})
@@ -132,9 +139,9 @@ def scrape_article(url, content=False):
     else:
         return author, headline, topics
 
-if __name__ == "__main__":
-    # Scrape headlines for a specific date
-    date = datetime(2021, 6, 1)
-    headlines = scrape_guardian_headlines(date)
-    #print(headlines)
+# if __name__ == "__main__":
+#     # Scrape headlines for a specific date
+#     date = datetime(2021, 6, 1)
+#     headlines = scrape_guardian_headlines(date)
+#     #print(headlines)
 
