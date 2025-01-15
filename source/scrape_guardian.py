@@ -74,7 +74,10 @@ def scrape_guardian_headlines(date):
         # Ensure there is a link in the a_tag
         if a_tag and a_tag.get("href"):
             article_url = a_tag.get("href")
-            author, headline, topics = scrape_article(article_url, content=False)
+            try:
+                author, headline, topics = scrape_article(article_url, content=False)
+            except ValueError:
+                author, headline, topics = "Not enough to unpack", "Not enough to unpack", "Not enough to unpack"
             
             authors.append(author)
             headlines.append(headline)
