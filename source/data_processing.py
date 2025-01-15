@@ -36,24 +36,21 @@ def process_gender_df(df):
     names = df["authors"].tolist()
     df["gender"] = guess_gender(names)
     return df
-
-
-def sentiment_analysis(data):
-    """
-    Perform sentiment analysis on the given text
-    """
-    # Perform sentiment analysis using a pre-trained model
-    # This is a placeholder function and should be replaced with actual sentiment analysis code
-    sentiment_pipeline = pipeline("sentiment-analysis")
-    sentiment_dict = sentiment_pipeline(data)
-    return sentiment_dict 
-
 def process_sentiment_df(df):
     """
+    Perform sentiment analysis on the headlines column of the DataFrame
+    and add 'sentiment' and 'sentiment_score' columns.
     """
-    sentiment_dict = df["headline"].apply(sentiment_analysis)
-    df["sentiment"] = sentiment_dict['label']
-    df["sentiment_score"] = sentiment_dict['score']
+    # Step 1: Initialize the sentiment analysis pipeline.
+    model_name = "distilbert-base-uncased-finetuned-sst-2-english"
+    sentiment_pipeline = pipeline("sentiment-analysis", model=model_name)
+
+    # Step 2: Apply sentiment analysis to each headline and extract results.
+    sentiments = df["headline"].apply(lambda text: sentiment_pipeline(text)[0])
+
+    # Step 3: Add sentiment results to the DataFrame.
+    df["sentiment"] = sentiments.apply(lambda x: x["label"])
+    df["sentiment_score"] = sentiments.apply(lambda x: x["score"])
 
     return df
 
@@ -61,6 +58,6 @@ def process_sentiment_df(df):
 if __name__ == "__main__":
     df = pd.read_csv("output/guardian_headlines_full.csv")
     df = process_gender_df(df)
-    df.to_csv("output/guardian_headlines_full_gender_processed.csv", index=False)
+    #df.to_csv("output/guardian_headlines_full_gender_processed.csv", index=False)
     df = process_sentiment_df(df)
-    df.to_csv("output/guardian_headlines_full_fully_processed.csv", index=False)
+    df.to_csv("output/guardian_headlines_full_processed.csv", index=False)
