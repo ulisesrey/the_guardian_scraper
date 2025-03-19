@@ -25,14 +25,17 @@ def compare_occurence(df, *words):
     Compare the occurence of multiple words in the headlines over time
     """
     for word in words:
-        df[word] = df['headline'].str.contains(word, case=False)
-    df['month'] = df['date'].dt.to_period('M')
+        df.loc[:,word] = df['headline'].str.contains(word, case=False)
+    df.loc[:,'month'] = df['date'].dt.to_period('M')
+    
+    fig, ax = plt.subplots()
     for word in words:
-        df.groupby('month')[word].sum().plot()
+        df.groupby('month')[word].sum().plot(ax=ax)
     plt.title(f"Comparing {', '.join(words)}")
     # labels
     plt.ylabel("Number of Headlines per month")
     plt.xlabel("Time")
     # add legend
     plt.legend(words)
-    plt.show()
+    #plt.show()
+    return fig, ax

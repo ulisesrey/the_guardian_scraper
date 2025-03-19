@@ -36,6 +36,7 @@ def process_gender_df(df):
     names = df["authors"].tolist()
     df["gender"] = guess_gender(names)
     return df
+
 def process_sentiment_df(df):
     """
     Perform sentiment analysis on the headlines column of the DataFrame
@@ -56,8 +57,10 @@ def process_sentiment_df(df):
 
 
 if __name__ == "__main__":
-    df = pd.read_csv("output/guardian_headlines_full.csv")
+    df = pd.read_csv("dataset/guardian_headlines_2019_2025.csv")
     df = process_gender_df(df)
+    print("gender guessing done")
     #df.to_csv("output/guardian_headlines_full_gender_processed.csv", index=False)
     df = process_sentiment_df(df)
-    df.to_csv("output/guardian_headlines_full_processed.csv", index=False)
+    print("sentiment analysis done")
+    df.to_csv("dataset/guardian_headlines_2019_2025_processed.csv", index=False)

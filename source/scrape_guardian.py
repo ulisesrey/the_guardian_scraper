@@ -56,10 +56,15 @@ def scrape_guardian_headlines(date):
 
     try:
         response = requests.get(url, headers=headers)
-        response.raise_for_status()
+        response.raise_for_status() # TODO: Maybe this needs to go after the if statement below
+        # handle too many requests, error 429
+        if response.status_code == 429:
+            logging.warning(f"Too many requests for {date_str}. Waiting for 10 seconds.")
+            return "Rate Limited", [], []
+    
     except requests.RequestException as e:
         logging.error(f"Error fetching data for {date_str}: {e}")
-        return []
+        return "Request error {e}", [], []
 
     # Parse the page content
     soup = BeautifulSoup(response.content, 'html.parser')
@@ -84,7 +89,7 @@ def scrape_guardian_headlines(date):
             all_topics.append(topics)
 
     # Add a random delay to mimic human behavior
-    time.sleep(random.uniform(0, 1))  # Random delay between 0 and 1 seconds
+    time.sleep(random.uniform(0, 0.2))  # Random delay between 0 and 1 seconds
     
     return authors, headlines, all_topics
 
@@ -102,6 +107,8 @@ def scrape_article(url, content=False):
     try:
         response = requests.get(url, headers=headers)
         response.raise_for_status()
+        # TODO: I should implement here also what I did for scrape_headline()
+        # TODO: Make everything more modular
     except requests.RequestException as e:
         logging.error(f"Error fetching data for {url}: {e}")
         return []

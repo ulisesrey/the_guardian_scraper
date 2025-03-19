@@ -7,6 +7,7 @@ from datetime import datetime, timedelta
 import csv
 import os
 from scrape_guardian import scrape_guardian_headlines
+import time
 
 def main(start_date, end_date, output_file):
     # Ensure the output directory exists
@@ -23,14 +24,18 @@ def main(start_date, end_date, output_file):
 
             authors, headlines, topics = scrape_guardian_headlines(current_date)
             
-        
+            if authors == "Rate Limited":
+                print("Rate limited by the server. Sleeping 5 s.")
+                time.sleep(5)
+            else:  
+                current_date += timedelta(days=1)
+
             # Write each headline, author, and topic to the CSV file immediately
             num_headlines = len(headlines)
             for i in range(num_headlines):
                 writer.writerow([current_date.strftime('%Y-%m-%d'), i+1, num_headlines, authors[i], headlines[i], topics[i]])
 
-                
-            current_date += timedelta(days=1)
+
     print(f"Data collection completed and saved to {output_file}")
 
 if __name__ == "__main__":
